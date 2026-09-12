@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>propayl ni jed</title>
+<link rel="icon" href="images/bigchungus.png" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="brand">Jeddd.EXE</span>
+    <nav aria-label="Main Navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#stats">Side Quests</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="crt-line">SYSTEM READY</p>
+    <h1 class="title">JEDRICK IAN<br>N. PACLIPAN</h1>
+    <p class="subtitle">LEVEL 3 · BSIT · DAVAO DEL SUR STATE COLLEGE</p>
+    <a class="prompt-link" href="#about">PRESS START <span class="cursor">▸</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section id="about">
+    <div class="wrap">
+      <h2 class="marker">[ ABOUT ]</h2>
+      <div class="about-body">
+        <img src="images/jed.jpg" alt="Jedrick Ian Paclipan" width="160">
+        <div class="about-copy">
+          <p>
+            I'm Jed — a 3rd year BSIT student at Davao del Sur State College,
+            Sta. Cruz Extension Campus.
+            I build small systems that solve real problems,
+            from hazard reporting to disaster-preparedness training.
+          </p>
+          <p>
+            I'm looking for a web development internship where I can keep
+            sharpening my HTML, CSS, and backend skills while learning how a
+            real dev team ships software.
+          </p>
+          <ul class="about-list">
+            <li>Based in Davao del Sur, Philippines</li>
+            <li>3rd Year, BSIT — Davao del Sur State College</li>
+            <li>Comfortable with Java, CSS, HTML, MySQL, and NetBeans</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <h2 class="marker">[ PROJECTS ]</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="images/logo.jpg" alt="ResQTrain logo" width="96">
+          <div>
+            <p class="card-title">ResQTrain</p>
+            <p>A training and emergency response project designed to help users learn basic emergency procedures.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/jhc.png" alt="JHC Motorcycles" width="96">
+          <div>
+            <p class="card-title">JHC Motorcycles</p>
+            <p>A motorcycle-related website project showcasing motorcycle information and services.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="images/grnhil.png" alt="Greenhills State University Portal" width="96">
+          <div>
+            <p class="card-title">Greenhills State University Portal</p>
+            <p>A mock university portal project created to present student and school-related information.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <h2 class="marker">[ SKILLS ]</h2>
+
+      <div class="skill-row">
+        <span>Backend Logic</span>
+        <span class="skill-tool">Java</span>
+        <span class="meter" role="img" aria-label="Level 3 out of 5">
+          <span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span>
+        </span>
+      </div>
+
+      <div class="skill-row">
+        <span>Database</span>
+        <span class="skill-tool">MySQL</span>
+        <span class="meter" role="img" aria-label="Level 3 out of 5">
+          <span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span>
+        </span>
+      </div>
+
+      <div class="skill-row">
+        <span>Desktop Dev</span>
+        <span class="skill-tool">NetBeans</span>
+        <span class="meter" role="img" aria-label="Level 3 out of 5">
+          <span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <aside id="stats">
+    <div class="wrap">
+      <h2 class="marker">[ SIDE QUESTS ]</h2>
+      <ul class="quests">
+        <li><span>Anime</span><span class="status">Watching</span></li>
+        <li><span>Gaming</span><span class="status">Active</span></li>
+        <li><span>Motorcycles</span><span class="status">Researching upgrades</span></li>
+        <li><span>Blogging</span><span class="status">Building a personal site</span></li>
+      </ul>
+    </div>
+  </aside>
+
+  <section id="contact">
+    <div class="wrap">
+      <h2 class="marker">[ CONTACT ]</h2>
+      <p>Got an internship opening or just want to talk shop? Send a message below.</p>
+
+      <form action="#" method="post">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Say hello..." required></textarea>
+        </div>
+        <button type="submit">Send ▸</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Built by Jed, BSIT 3A · <a href="#main">Back to top</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

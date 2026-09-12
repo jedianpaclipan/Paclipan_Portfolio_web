@@ -1,0 +1,314 @@
+:root {
+    --bg: #14151f;
+    --panel: #1a1c29;
+    --border: #34364a;
+    --text: #e7e4da;
+    --text-dim: #8f90a6;
+    --amber: #ffb000;
+    --teal: #59c9a5;
+    --max-width: 700px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  a {
+    color: var(--teal);
+    text-decoration: none;
+  }
+  a:hover, a:focus-visible { color: var(--amber); }
+
+  :focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--amber);
+    color: var(--bg);
+    padding: 8px 12px;
+    z-index: 10;
+  }
+  .skip-link:focus { left: 8px; top: 8px; }
+
+  .wrap {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* -- top bar -- */
+  .topbar {
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 5;
+  }
+  .topbar-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 12px;
+    color: var(--amber);
+    letter-spacing: 1px;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  nav a {
+    color: var(--text);
+    font-size: 14px;
+    position: relative;
+    padding-left: 14px;
+  }
+  nav a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    opacity: 0;
+  }
+  nav a:hover, nav a:focus-visible {
+    color: var(--amber);
+  }
+  nav a:hover::before, nav a:focus-visible::before {
+    content: "▸";
+    opacity: 1;
+    color: var(--amber);
+  }
+
+  /* -- hero / title screen -- */
+  .hero {
+    padding: 72px 0 56px;
+    border-bottom: 2px solid var(--border);
+     background-image:
+    linear-gradient(rgba(20, 21, 31, 0.85), rgba(20, 21, 31, 0.85)),
+    url("images/pixeltech.gif");
+  background-size: cover;
+  background-position: center;
+  }
+  .crt-line {
+    font-size: 13px;
+    color: var(--teal);
+    margin: 0 0 20px;
+  }
+  .title {
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(22px, 5vw, 34px);
+    line-height: 1.5;
+    margin: 0 0 20px;
+    color: var(--text);
+  }
+  .subtitle {
+    color: var(--text-dim);
+    font-size: 14px;
+    margin: 0 0 32px;
+    letter-spacing: 0.5px;
+  }
+  .prompt-link {
+    display: inline-block;
+    font-size: 15px;
+    color: var(--amber);
+    border: 2px solid var(--amber);
+    padding: 10px 18px;
+  }
+  .prompt-link:hover, .prompt-link:focus-visible {
+    background: var(--amber);
+    color: var(--bg);
+  }
+  .cursor {
+    display: inline-block;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .cursor { animation: blink 1s steps(1) infinite; }
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* -- section shell -- */
+  section, aside {
+    padding: 56px 0;
+    border-bottom: 2px solid var(--border);
+  }
+  section:last-of-type, aside:last-of-type { border-bottom: none; }
+
+  .marker {
+    font-family: 'Press Start 2P', monospace;
+    font-size: 13px;
+    color: var(--amber);
+    margin: 0 0 28px;
+  }
+
+  /* -- about -- */
+  .about-body {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .about-body img {
+    border: 2px solid var(--border);
+    width: 160px;
+    height: auto;
+    flex-shrink: 0;
+  }
+  .about-copy { flex: 1; min-width: 240px; }
+  .about-copy p { margin: 0 0 16px; }
+  .about-list {
+    list-style: none;
+    margin: 16px 0 0;
+    padding: 0;
+    color: var(--text-dim);
+  }
+  .about-list li { margin-bottom: 6px; }
+
+  /* -- projects -- */
+  .cards {
+    display: grid;
+    gap: 20px;
+  }
+  .card {
+    border: 2px solid var(--border);
+    padding: 20px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .card:hover, .card:focus-within {
+    border-color: var(--teal);
+  }
+  .card img {
+    width: 96px;
+    height: auto;
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 8px;
+  }
+  .card p {
+    margin: 0;
+    color: var(--text-dim);
+    font-size: 14px;
+  }
+
+  /* -- skills as meters -- */
+  .skill-row {
+    display: grid;
+    grid-template-columns: 140px 110px 1fr;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 14px;
+  }
+  .skill-tool { color: var(--text-dim); }
+  .meter {
+    display: flex;
+    gap: 4px;
+  }
+  .meter span {
+    width: 18px;
+    height: 12px;
+    border: 2px solid var(--border);
+  }
+  .meter span.filled {
+    background: var(--amber);
+    border-color: var(--amber);
+  }
+
+  /* -- side quests -- */
+  .quests {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .quests li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .quests li:last-child { border-bottom: none; }
+  .quests .status { color: var(--teal); }
+
+  /* -- contact -- */
+  form { max-width: 460px; }
+  .field { margin-bottom: 20px; }
+  label {
+    display: block;
+    font-size: 13px;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+  }
+  input, textarea {
+    width: 100%;
+    background: var(--panel);
+    border: none;
+    border-bottom: 2px solid var(--border);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px 4px;
+  }
+  input:focus, textarea:focus {
+    border-bottom-color: var(--amber);
+    outline: none;
+  }
+  textarea { resize: vertical; min-height: 90px; }
+  button {
+    background: transparent;
+    border: 2px solid var(--teal);
+    color: var(--teal);
+    font-family: inherit;
+    font-size: 14px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  button:hover, button:focus-visible {
+    background: var(--teal);
+    color: var(--bg);
+  }
+
+  footer {
+    padding: 28px 0 48px;
+    color: var(--text-dim);
+    font-size: 13px;
+  }
+
+  @media (max-width: 560px) {
+    .skill-row {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+  }
